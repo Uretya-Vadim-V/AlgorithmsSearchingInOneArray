@@ -2,7 +2,7 @@
 
 namespace AlgorithmsSearchingInOneArray
 {
-    public class Search
+    public static class Search
     {
         static int index, badElement = -1;
         public static int LinearInUnorderedArray(int[] array, int element)

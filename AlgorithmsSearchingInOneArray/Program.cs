@@ -5,13 +5,13 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace AlgorithmsSearchingInOneArray
 {
-    class Program
+    public static class Program
     {
         // время работы поиска индекса элемента
         static double timeWork;
         static Random random = new();
         // Средний случай заполнения массива, есть искомый элемент
-        static int[] Average(int[] array)
+        public static int[] Average(int[] array)
         {
             int length = array.Length;
             for (int i = 0; i < length; i++)
@@ -21,7 +21,7 @@ namespace AlgorithmsSearchingInOneArray
             return array;
         }
         // Худший вариант заполнения массива, нет искомого элемента
-        static int[] Worst(int[] array)
+        public static int[] Worst(int[] array)
         {
             int length = array.Length;
             for (int i = 0; i < length; i++)
