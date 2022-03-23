@@ -13,7 +13,7 @@ namespace AlgorithmsSearchingInOneArray
             {
                 index++;
             }
-            if (index == lenght)
+            if (index >= lenght)
                 return badElement;
             return index;
         }
@@ -24,7 +24,7 @@ namespace AlgorithmsSearchingInOneArray
             {
                 index++;
             }
-            if (index == array.Length)
+            if (index >= array.Length - 1)
                 return badElement;
             return index;
         }
@@ -36,7 +36,7 @@ namespace AlgorithmsSearchingInOneArray
             {
                 index++;
             }
-            if (index == lenght)
+            if (index >= lenght)
                 return badElement;
             else
                 return index;
@@ -45,19 +45,17 @@ namespace AlgorithmsSearchingInOneArray
         {
             int mid, left = 0;
             int right = array.Length - 1;
-            while (left < right)
+            while (left <= right)
             {
-                mid = left + (right - left) / 2;
-                if (array[mid] == element)
-                    return mid;
-                if (array[mid] > element)
-                    right = mid;
+                mid = left + (right - left) / 2;      
+                if (array[mid] >= element)
+                    right = mid - 1;
                 else
                     left = mid + 1;
             }
-            if (array[left] != element)
-                return badElement;
-            return left;
+            if (array[left] == element)
+                return left;
+            return badElement;
         }
         public static int BinaryRecursive(int[] array, int element)
         {
@@ -66,13 +64,13 @@ namespace AlgorithmsSearchingInOneArray
             return BinaryRecursive_Func(array, element, 0, array.Length - 1);
         }
         private static int BinaryRecursive_Func(int[] array, int element, int left, int right)
-        {
-            if (left > right)
-                return badElement;
+        {         
             int mid = left + (right - left) / 2;
-            if (array[mid] == element)
-                return mid;
-            else if (array[mid] > element)
+            if (array[left] == element)
+                return left;
+            if(left > right)
+                return badElement;
+            if (array[mid] >= element)
                 return BinaryRecursive_Func(array, element, left, mid - 1);
             else
                 return BinaryRecursive_Func(array, element, mid + 1, right);

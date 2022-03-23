@@ -16,7 +16,7 @@ namespace AlgorithmsSearchingInOneArray
             int length = array.Length;
             for (int i = 0; i < length; i++)
             {
-                array[i] = length + 1;// для наглядности работы
+                array[i] = i;// для наглядности работы
             }
             return array;
         }
@@ -26,7 +26,7 @@ namespace AlgorithmsSearchingInOneArray
             int length = array.Length;
             for (int i = 0; i < length; i++)
             {
-                array[i] = 0;// для наглядности работы
+                array[i] = length;// для наглядности работы
             }
             return array;
         }
