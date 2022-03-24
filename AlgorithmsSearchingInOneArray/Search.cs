@@ -5,6 +5,7 @@ namespace AlgorithmsSearchingInOneArray
     public static class Search
     {
         static int index, badElement = -1;
+        // линейный
         public static int LinearInUnorderedArray(int[] array, int element)
         {
             index = 0;
@@ -17,6 +18,7 @@ namespace AlgorithmsSearchingInOneArray
                 return badElement;
             return index;
         }
+        // линейный с барьером
         public static int LinearWithBarrierInDisorderedArray(int[] array, int element)
         {
             index = 0;
@@ -28,6 +30,7 @@ namespace AlgorithmsSearchingInOneArray
                 return badElement;
             return index;
         }
+        // быстрый линейный
         public static int FastLinearInOrderedArray(int[] array, int element)
         {
             index = 0;
@@ -40,6 +43,7 @@ namespace AlgorithmsSearchingInOneArray
                 return badElement;
             return index;
         }
+        // бинарный итерационный
         public static int BinaryIterative(int[] array, int element)
         {
             int mid, left = 0;
@@ -56,6 +60,7 @@ namespace AlgorithmsSearchingInOneArray
                 return left;
             return badElement;
         }
+        // бинарный рекурсивный
         public static int BinaryRecursive(int[] array, int element)
         {
             if (array.Length == 0)
@@ -74,6 +79,7 @@ namespace AlgorithmsSearchingInOneArray
             else
                 return BinaryRecursive_Func(array, element, mid + 1, right);
         }
+        // прыжками
         public static int JumpsInOrderedArray(int[] array, int element)
         {
             if (array.Length == 0)
