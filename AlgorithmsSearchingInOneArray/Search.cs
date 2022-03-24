@@ -35,11 +35,11 @@ namespace AlgorithmsSearchingInOneArray
         {
             index = 0;
             int lenght = array.Length;
-            while (index < lenght && array[index] < element)
+            while (index < lenght - 1 && array[index] < element)
             {
                 index++;
             }
-            if (index >= lenght || array[index] != element)
+            if (array[index] != element)
                 return badElement;
             return index;
         }
