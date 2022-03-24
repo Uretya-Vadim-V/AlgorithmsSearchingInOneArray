@@ -62,5 +62,37 @@ namespace AlgorithmsTests
             int result = Search.BinaryIterative(array, element);
             Assert.Equal(result, element);
         }
+        [Fact]
+        public void TestOnly1()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.BinaryIterative(array, 1);
+            Assert.Equal(result, 0);
+        }
+        [Fact]
+        public void TestStartElement()
+        {
+            int[] array = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.BinaryIterative(array, 0);
+            Assert.Equal(result, 0);
+        }
+        [Fact]
+        public void TestEndElement()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.BinaryIterative(array, 2);
+            Assert.Equal(result, 16);
+        }
+        [Fact]
+        public void TestMidElement()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.BinaryIterative(array, 2);
+            Assert.Equal(result, 8);
+        }
     }
 }

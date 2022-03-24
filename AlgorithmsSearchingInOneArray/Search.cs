@@ -36,10 +36,9 @@ namespace AlgorithmsSearchingInOneArray
             {
                 index++;
             }
-            if (index >= lenght)
+            if (index >= lenght || array[index] != element)
                 return badElement;
-            else
-                return index;
+            return index;
         }
         public static int BinaryIterative(int[] array, int element)
         {
@@ -77,6 +76,8 @@ namespace AlgorithmsSearchingInOneArray
         }
         public static int JumpsInOrderedArray(int[] array, int element)
         {
+            if (array.Length == 0)
+                return badElement;
             int sqrt = (int)Math.Sqrt(array.Length);
             index = 0;
             int length = array.Length, jump = sqrt;
@@ -87,7 +88,7 @@ namespace AlgorithmsSearchingInOneArray
                 if (index >= length)
                     return badElement;
             }
-            while (array[index] < element)
+            while (index < jump && array[index] < element)
             {
                 index++;
             }

@@ -62,5 +62,37 @@ namespace AlgorithmsTests
             int result = Search.LinearWithBarrierInDisorderedArray(array, element);
             Assert.Equal(result, element);
         }
+        [Fact]
+        public void TestOnly1()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.LinearWithBarrierInDisorderedArray(array, 1);
+            Assert.Equal(result, 0);
+        }
+        [Fact]
+        public void TestStartElement()
+        {
+            int[] array = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.LinearWithBarrierInDisorderedArray(array, 0);
+            Assert.Equal(result, 0);
+        }
+        [Fact]
+        public void TestEndElement()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.LinearWithBarrierInDisorderedArray(array, 2);
+            Assert.Equal(result, 15);
+        }
+        [Fact]
+        public void TestMidElement()
+        {
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 2 };
+            // вызов тестируемого алгоритма, получение результата
+            int result = Search.LinearWithBarrierInDisorderedArray(array, 2);
+            Assert.Equal(result, 8);
+        }
     }
 }
